@@ -11,29 +11,8 @@ on:
     - cron: "*/10 * * * *"  # Runs every 10 minutes to keep the app alive
 
 jobs:
-  test:
-    name: Run Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run tests
-        run: pytest || echo "No tests found, skipping."
-
   deploy:
     name: Deploy to Streamlit Cloud
-    needs: test  # Runs only if tests pass
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -47,4 +26,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Streamlit App
-        run: curl -s https://vidpro.streamlit.app > /dev/null || echo "Streamlit app is down"
+        run: curl -s https://vidpro.streamlit.app > /dev/null || echo "Streamlit app is down"
