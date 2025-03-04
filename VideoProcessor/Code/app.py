@@ -14,14 +14,7 @@ def save_uploaded_file(uploaded_file, save_path):
 st.markdown(
         """
         <style>
-         /* Background image */
-        .stApp {
-            background-image: url('https://wallpaperaccess.com/full/1398314.jpg'); /* Replace with your background image URL */
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: white;
-        }
+    
         /* Informational section styling */
         .info-section {
             background-color: rgba(0, 0, 0, 0.7);
